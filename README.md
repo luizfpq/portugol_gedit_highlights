@@ -1,0 +1,1 @@
+portugol_gedit_highlights
