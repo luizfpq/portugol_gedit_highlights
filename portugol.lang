@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
+ Author: Luiz Fernando Postingel Quirino <luizfpq@gmail.com>
+
+ Due to the use of Portugol pseudo-code , given in the discipline 
+ "Algorithms and Programming I" of Information Systems at Federal 
+ University of Mato Grosso do Sul, Campus Três Lagoas, taking in 
+ consideration the fact that the lab  computers uses Debian operating system
+ with Gnome Environment, I chose to create  a possibility of recognition of 
+ pseudo-language by gEdit editor. 
+ 
+ This script has been modified based on 'c.lang'
+ which is part of gtksourceview, the creators of the original file 
+ are referenced below.
+
+### Begin of original header ###
  This file is part of GtkSourceView
 
  Authors: Marco Barisione, Emanuele Aina
@@ -20,9 +34,9 @@
  You should have received a copy of the GNU Lesser General Public
  License along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
+### End of original header ###
 -->
-<language id="portugol" _name="Portugol" version="2.0" _section="Source">
+<language id="c" _name="Portugol" version="2.0" _section="Source">
   <metadata>
     <property name="mimetypes">text/x-c;text/x-csrc;image/x-xpixmap</property>
     <property name="globs">*.alg</property>
@@ -113,7 +127,7 @@
     <context id="preprocessor" style-ref="preprocessor" end-at-line-end="true">
       <start extended="true">
         \%{preproc-start}
-        (define|undef|error|pragma|ident|if(n?def)?|else|elif|endif|line|warning)
+        (define|se|senao|fimse|entao)
         \b
       </start>
       <include>
@@ -192,28 +206,16 @@
     </context>
 
     <context id="keywords" style-ref="keyword">
-      <keyword>asm</keyword>
-      <keyword>break</keyword>
-      <keyword>case</keyword>
-      <keyword>continue</keyword>
-      <keyword>default</keyword>
-      <keyword>do</keyword>
-      <keyword>else</keyword>
-      <keyword>enum</keyword>
-      <keyword>for</keyword>
-      <keyword>fortran</keyword>
-      <keyword>goto</keyword>
-      <keyword>if</keyword>
-      <keyword>return</keyword>
-      <keyword>struct</keyword>
-      <keyword>switch</keyword>
-      <keyword>typedef</keyword>
-      <keyword>union</keyword>
       <keyword>algoritmo</keyword>
+      <keyword>fimalgoritmo</keyword>
       <keyword>escreva</keyword>
       <keyword>leia</keyword>
-      <keyword>fimalgoritmo</keyword>
-      
+      <keyword>se</keyword>
+      <keyword>senao</keyword>
+      <keyword>fimse</keyword>
+      <keyword>entao</keyword>
+      <keyword>←</keyword>
+	
     </context>
 
     <context id="operators" style-ref="operator">
@@ -221,26 +223,12 @@
     </context>
 
     <context id="types" style-ref="type">
-      <keyword>_Bool</keyword>
-      <keyword>_Complex</keyword>
-      <keyword>_Imaginary</keyword>
-      <keyword>bool</keyword>
-      <keyword>char</keyword>
-      <keyword>double</keyword>
-      <keyword>float</keyword>
-      <keyword>int</keyword>
-      <keyword>(u)?int(8|16|32|64)_t</keyword>
-      <keyword>long</keyword>
-      <keyword>ptrdiff_t</keyword>
-      <keyword>off(64)?_t</keyword>
-      <keyword>short</keyword>
-      <keyword>signed</keyword>
-      <keyword>size_t</keyword>
-      <keyword>ssize_t</keyword>
-      <keyword>unsigned</keyword>
-      <keyword>void</keyword>
-      <keyword>wchar_t</keyword>
-      <keyword>wint_t</keyword>
+      <keyword>logico</keyword>
+      <keyword>caracter</keyword>
+      <keyword>cadeia</keyword>
+      <keyword>real</keyword>
+      <keyword>inteiro</keyword>
+      <keyword>(u)?inteiro(8|16|32|64)_t</keyword>
     </context>
 
     <context id="storage-class" style-ref="storage-class">
@@ -256,8 +244,8 @@
 
     <!-- C99 booleans -->
     <context id="boolean" style-ref="boolean">
-      <keyword>true</keyword>
-      <keyword>false</keyword>
+      <keyword>verdadeiro</keyword>
+      <keyword>falso</keyword>
     </context>
 
     <context id="common-defines" style-ref="common-defines">
